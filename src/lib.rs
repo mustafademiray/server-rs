@@ -11,7 +11,8 @@ type Job = Box<dyn FnOnce() + Send + 'static>;
 impl ThreadPool {
     
     pub fn new(size: usize) -> ThreadPool{
-        assert!(size > 0); //panics 
+        assert!(size > 0); 
+        //PANICS
 
         let (sender, receiver) = mpsc::channel();
 
